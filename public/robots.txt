@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /cdn-cgi/
+
+Sitemap: https://sakaryaiktisat.com/sitemap-index.xml

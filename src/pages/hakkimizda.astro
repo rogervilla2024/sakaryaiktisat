@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+---
+
+<BaseLayout title="Hakkımızda" description="Sakarya İktisat — Slot taktikleri ve casino stratejileri hakkında profesyonel bilgi kaynağı.">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb items={[
+      { label: 'Anasayfa', href: '/' },
+      { label: 'Hakkımızda' }
+    ]} />
+
+    <article class="mt-8 prose max-w-none">
+      <h1 class="text-3xl sm:text-4xl font-display font-bold text-casino-text mb-8">
+        Hakkımızda
+      </h1>
+
+      <p>
+        <strong>Sakarya İktisat</strong>, slot makineleri ve casino oyunları hakkında Türkçe, bilimsel ve tarafsız bilgi sunan bir platformdur. Amacımız, oyuncuların bilinçli kararlar vermesine yardımcı olmaktır.
+      </p>
+
+      <h2>Misyonumuz</h2>
+      <p>
+        Casino dünyasında doğru bilgiye ulaşmak her zaman kolay değildir. Biz, matematiksel analizler, RTP hesaplamaları ve oyun mekaniği incelemeleri ile oyunculara güvenilir bir kaynak olmayı hedefliyoruz.
+      </p>
+
+      <h2>Ne Yapıyoruz?</h2>
+      <ul>
+        <li><strong>Slot İncelemeleri:</strong> Popüler slot oyunlarının detaylı analizleri</li>
+        <li><strong>Strateji Rehberleri:</strong> Bütçe yönetimi ve oyun seçimi taktikleri</li>
+        <li><strong>Matematiksel Analizler:</strong> RTP, volatilite ve hit frequency açıklamaları</li>
+        <li><strong>Temel Bilgiler:</strong> Yeni başlayanlar için kapsamlı rehberler</li>
+      </ul>
+
+      <h2>Sorumluluk Bilinci</h2>
+      <p>
+        Kumar bağımlılık yapabilir. Sitemizde yer alan tüm içerikler yalnızca bilgilendirme amaçlıdır ve hiçbir şekilde kumara teşvik etmeyi amaçlamaz. Her zaman sorumlu kumar ilkelerine uymanızı öneriyoruz.
+      </p>
+
+      <div class="bg-casino-red/10 border border-casino-red/30 rounded-lg p-6 not-prose mt-8">
+        <p class="text-casino-red font-bold text-lg mb-2">18+ Uyarı</p>
+        <p class="text-casino-text-muted">
+          Bu site yalnızca 18 yaş ve üzeri bireyler içindir. Kumar oynamadan önce bulunduğunuz ülkedeki yasal düzenlemeleri kontrol edin. Kaybetmeyi göze alabileceğinizden fazlasını riske atmayın.
+        </p>
+      </div>
+    </article>
+  </div>
+</BaseLayout>

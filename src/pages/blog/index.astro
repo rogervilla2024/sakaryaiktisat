@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+import { getPostSlug } from '../../lib/utils';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Tüm Makaleler" description="Slot taktikleri, casino stratejileri ve oyun incelemeleri — tüm makalelerimizi keşfedin.">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb items={[
+      { label: 'Anasayfa', href: '/' },
+      { label: 'Blog' }
+    ]} />
+
+    <div class="mt-8 mb-12">
+      <h1 class="text-3xl sm:text-4xl font-display font-bold text-casino-text mb-4">
+        Tüm Makaleler
+      </h1>
+      <p class="text-casino-text-muted text-lg">
+        {sortedPosts.length} makale ile slot dünyasını keşfedin.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {sortedPosts.map(post => (
+        <BlogCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={getPostSlug(post.id)}
+          pubDate={post.data.pubDate}
+          category={post.data.category}
+          readingTime={post.data.readingTime}
+        />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

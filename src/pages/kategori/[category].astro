@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import Breadcrumb from '../../components/Breadcrumb.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../lib/constants';
+import { getPostSlug } from '../../lib/utils';
+
+export function getStaticPaths() {
+  return Object.keys(CATEGORIES).map(category => ({
+    params: { category },
+  }));
+}
+
+const { category } = Astro.params;
+const categoryInfo = CATEGORIES[category as keyof typeof CATEGORIES];
+
+const posts = await getCollection('blog', ({ data }) =>
+  !data.draft && data.category === category
+);
+const sortedPosts = posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout
+  title={`${categoryInfo.label} — Slot Taktikleri`}
+  description={`${categoryInfo.label} kategorisindeki tüm makaleler. Slot taktikleri ve casino stratejileri.`}
+>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb items={[
+      { label: 'Anasayfa', href: '/' },
+      { label: categoryInfo.label }
+    ]} />
+
+    <div class="mt-8 mb-12">
+      <h1 class="text-3xl sm:text-4xl font-display font-bold text-casino-text mb-4">
+        {categoryInfo.label}
+      </h1>
+      <p class="text-casino-text-muted text-lg">
+        {sortedPosts.length} makale bu kategoride.
+      </p>
+    </div>
+
+    {sortedPosts.length > 0 ? (
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sortedPosts.map(post => (
+          <BlogCard
+            title={post.data.title}
+            description={post.data.description}
+            slug={getPostSlug(post.id)}
+            pubDate={post.data.pubDate}
+            category={post.data.category}
+            readingTime={post.data.readingTime}
+          />
+        ))}
+      </div>
+    ) : (
+      <div class="text-center py-20">
+        <p class="text-casino-text-muted text-lg">Bu kategoride henüz makale yok.</p>
+        <a href="/blog" class="text-casino-gold hover:text-casino-gold-light mt-4 inline-block">
+          Tüm makaleleri gör &rarr;
+        </a>
+      </div>
+    )}
+  </div>
+</BaseLayout>

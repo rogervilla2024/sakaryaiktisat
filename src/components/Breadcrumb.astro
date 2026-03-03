@@ -1,0 +1,41 @@
+---
+interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+
+const breadcrumbSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": items.map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "name": item.label,
+    ...(item.href ? { "item": `https://sakaryaiktisat.com${item.href}` } : {})
+  }))
+});
+---
+
+<nav aria-label="Breadcrumb">
+  <script type="application/ld+json" set:html={breadcrumbSchema} />
+  <ol class="flex items-center gap-2 text-sm text-casino-text-muted flex-wrap">
+    {items.map((item, i) => (
+      <li class="flex items-center gap-2">
+        {i > 0 && <span class="text-casino-text-dim">/</span>}
+        {item.href ? (
+          <a href={item.href} class="hover:text-casino-gold transition-colors">
+            {item.label}
+          </a>
+        ) : (
+          <span class="text-casino-text-dim">{item.label}</span>
+        )}
+      </li>
+    ))}
+  </ol>
+</nav>

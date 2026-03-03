@@ -1,0 +1,115 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import Sidebar from '../components/Sidebar.astro';
+import { CATEGORIES } from '../lib/constants';
+import { formatDate, getPostSlug } from '../lib/utils';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  entry: CollectionEntry<'blog'>;
+  headings: { depth: number; slug: string; text: string }[];
+}
+
+const { entry, headings } = Astro.props;
+const { title, description, pubDate, updatedDate, category, tags, author, readingTime } = entry.data;
+const categoryInfo = CATEGORIES[category];
+
+const articleSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "author": { "@type": "Organization", "name": "Sakarya İktisat" },
+  "publisher": { "@type": "Organization", "name": "Sakarya İktisat", "url": "https://sakaryaiktisat.com" },
+  "datePublished": pubDate.toISOString(),
+  "dateModified": (updatedDate || pubDate).toISOString(),
+  "mainEntityOfPage": { "@type": "WebPage", "@id": `https://sakaryaiktisat.com/blog/${getPostSlug(entry.id)}` }
+});
+
+// Build FAQ schema from H3 headings under "Sık Sorulan Sorular"
+const faqHeadings = headings.filter(h => h.depth === 3);
+const faqSchema = faqHeadings.length > 0 ? JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqHeadings.slice(0, 5).map(h => ({
+    "@type": "Question",
+    "name": h.text,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": `Bu sorunun detaylı cevabı için makalemizi okuyun: ${title}`
+    }
+  }))
+}) : null;
+---
+
+<BaseLayout title={title} description={description} ogType="article">
+  <script type="application/ld+json" set:html={articleSchema} slot="head" />
+  {faqSchema && <script type="application/ld+json" set:html={faqSchema} slot="head" />}
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <Breadcrumb items={[
+      { label: 'Anasayfa', href: '/' },
+      { label: categoryInfo.label, href: `/kategori/${category}` },
+      { label: title }
+    ]} />
+
+    <div class="lg:grid lg:grid-cols-3 lg:gap-12 mt-8">
+      <!-- Article -->
+      <article class="lg:col-span-2">
+        <header class="mb-8">
+          <span class={`inline-block px-3 py-1 rounded-full text-xs font-semibold text-casino-bg ${categoryInfo.color} mb-4`}>
+            {categoryInfo.label}
+          </span>
+          <h1 class="text-3xl sm:text-4xl font-display font-bold text-casino-text mb-4 leading-tight">
+            {title}
+          </h1>
+          <div class="flex flex-wrap items-center gap-4 text-casino-text-muted text-sm">
+            <span>{author}</span>
+            <span>·</span>
+            <time datetime={pubDate.toISOString()}>{formatDate(pubDate)}</time>
+            <span>·</span>
+            <span>{readingTime} dk okuma</span>
+          </div>
+          {updatedDate && (
+            <p class="text-casino-text-dim text-xs mt-2">
+              Güncellenme: {formatDate(updatedDate)}
+            </p>
+          )}
+        </header>
+
+        <TableOfContents headings={headings} />
+
+        <div class="prose max-w-none">
+          <slot />
+        </div>
+
+        <!-- Tags -->
+        <div class="mt-10 pt-6 border-t border-casino-border">
+          <div class="flex flex-wrap gap-2">
+            {tags.map(tag => (
+              <span class="px-3 py-1 bg-casino-surface-light text-casino-text-muted text-xs rounded-full">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <!-- Disclaimer -->
+        <div class="mt-8 p-4 bg-casino-red/10 border border-casino-red/30 rounded-lg">
+          <p class="text-casino-red text-sm font-semibold mb-1">18+ Sorumluluk Uyarısı</p>
+          <p class="text-casino-text-muted text-xs">
+            Kumar bağımlılık yapabilir. Bu sitedeki içerikler yalnızca bilgilendirme amaçlıdır.
+            Kumar oynamadan önce yerel yasaları kontrol edin. Sorumlu kumar oynayın.
+          </p>
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="hidden lg:block">
+        <Sidebar currentSlug={getPostSlug(entry.id)} currentCategory={category} />
+      </aside>
+    </div>
+  </div>
+</BaseLayout>

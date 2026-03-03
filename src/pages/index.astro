@@ -1,0 +1,75 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import BlogCard from '../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES, SITE } from '../lib/constants';
+import { getPostSlug } from '../lib/utils';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const latestPosts = allPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+
+const websiteSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": SITE.title,
+  "url": SITE.url,
+  "description": SITE.description,
+});
+---
+
+<BaseLayout>
+  <script type="application/ld+json" set:html={websiteSchema} />
+  <Hero />
+
+  <!-- Latest Posts -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="flex items-center justify-between mb-10">
+      <h2 class="text-2xl sm:text-3xl font-display font-bold text-casino-text">
+        Son Makaleler
+      </h2>
+      <a href="/blog" class="text-casino-gold hover:text-casino-gold-light font-semibold text-sm transition-colors">
+        Tümünü Gör &rarr;
+      </a>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {latestPosts.map(post => (
+        <BlogCard
+          title={post.data.title}
+          description={post.data.description}
+          slug={getPostSlug(post.id)}
+          pubDate={post.data.pubDate}
+          category={post.data.category}
+          readingTime={post.data.readingTime}
+        />
+      ))}
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <h2 class="text-2xl sm:text-3xl font-display font-bold text-casino-text mb-10 text-center">
+      Kategoriler
+    </h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {Object.entries(CATEGORIES).map(([slug, cat]) => (
+        <a
+          href={`/kategori/${slug}`}
+          class="bg-casino-surface border border-casino-border rounded-xl p-6 hover:border-casino-gold/50 hover:-translate-y-1 transition-all duration-300 text-center group"
+        >
+          <div class={`w-12 h-12 ${cat.color} rounded-full mx-auto mb-4 flex items-center justify-center text-casino-bg text-xl font-bold opacity-80 group-hover:opacity-100 transition-opacity`}>
+            {slug === 'temel-bilgi' ? '📚' : slug === 'strateji' ? '🎯' : slug === 'inceleme' ? '🔍' : '🧠'}
+          </div>
+          <h3 class="font-display font-bold text-casino-text group-hover:text-casino-gold transition-colors">
+            {cat.label}
+          </h3>
+          <p class="text-casino-text-muted text-sm mt-2">
+            {slug === 'temel-bilgi' ? 'Slot mekaniklerini öğrenin' : slug === 'strateji' ? 'Kazanma stratejileri' : slug === 'inceleme' ? 'Oyun incelemeleri' : 'Matematiksel analizler'}
+          </p>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

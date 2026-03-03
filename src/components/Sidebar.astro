@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../lib/constants';
+import { formatDate, getPostSlug } from '../lib/utils';
+
+interface Props {
+  currentSlug?: string;
+  currentCategory?: string;
+}
+
+const { currentSlug, currentCategory } = Astro.props;
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const sortedPosts = allPosts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+const popularPosts = sortedPosts.slice(0, 5);
+---
+
+<div class="sticky top-24 space-y-8">
+  <!-- Popular Posts -->
+  <div class="bg-casino-surface border border-casino-border rounded-xl p-5">
+    <h3 class="font-display font-bold text-casino-text mb-4">Popüler Makaleler</h3>
+    <ul class="space-y-3">
+      {popularPosts.map((post, i) => (
+        <li>
+          <a
+            href={`/blog/${getPostSlug(post.id)}`}
+            class:list={[
+              'flex items-start gap-3 group',
+              getPostSlug(post.id) === currentSlug && 'pointer-events-none'
+            ]}
+          >
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-casino-surface-light flex items-center justify-center text-xs font-bold text-casino-gold">
+              {i + 1}
+            </span>
+            <span class:list={[
+              'text-sm leading-snug transition-colors',
+              getPostSlug(post.id) === currentSlug
+                ? 'text-casino-text-dim'
+                : 'text-casino-text-muted group-hover:text-casino-gold'
+            ]}>
+              {post.data.title}
+            </span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  <!-- Categories -->
+  <div class="bg-casino-surface border border-casino-border rounded-xl p-5">
+    <h3 class="font-display font-bold text-casino-text mb-4">Kategoriler</h3>
+    <div class="flex flex-wrap gap-2">
+      {Object.entries(CATEGORIES).map(([slug, cat]) => (
+        <a
+          href={`/kategori/${slug}`}
+          class:list={[
+            'px-3 py-1.5 rounded-full text-xs font-semibold transition-all',
+            slug === currentCategory
+              ? `${cat.color} text-casino-bg`
+              : 'bg-casino-surface-light text-casino-text-muted hover:text-casino-text hover:bg-casino-border'
+          ]}
+        >
+          {cat.label}
+        </a>
+      ))}
+    </div>
+  </div>
+
+  <!-- Newsletter -->
+  <div class="bg-gradient-to-br from-casino-surface to-casino-surface-light border border-casino-neon/20 rounded-xl p-5">
+    <h3 class="font-display font-bold text-casino-text mb-2">Bülten</h3>
+    <p class="text-casino-text-muted text-xs mb-4">Yeni taktik ve incelemeleri kaçırmayın.</p>
+    <form class="space-y-3" onsubmit="return false;">
+      <input
+        type="email"
+        placeholder="E-posta adresiniz"
+        class="w-full px-4 py-2.5 bg-casino-bg border border-casino-border rounded-lg text-sm text-casino-text placeholder-casino-text-dim focus:border-casino-neon focus:outline-none focus:ring-1 focus:ring-casino-neon/50"
+        aria-label="E-posta adresi"
+      />
+      <button
+        type="submit"
+        class="w-full px-4 py-2.5 bg-casino-neon text-casino-bg font-semibold text-sm rounded-lg hover:bg-casino-neon-dim transition-colors"
+      >
+        Abone Ol
+      </button>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,66 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+import { SITE } from '../lib/constants';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalURL?: string;
+  ogType?: string;
+}
+
+const {
+  title = SITE.title,
+  description = SITE.description,
+  canonicalURL = new URL(Astro.url.pathname, SITE.url).href,
+  ogType = 'website',
+} = Astro.props;
+
+const fullTitle = title === SITE.title ? title : `${title} | ${SITE.title}`;
+---
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index, follow" />
+  <meta name="language" content="Turkish" />
+  <meta name="author" content={SITE.author} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content={ogType} />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:site_name" content={SITE.title} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalURL} />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={fullTitle} />
+  <meta name="twitter:description" content={description} />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <title>{fullTitle}</title>
+</head>
+<body class="min-h-screen flex flex-col">
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:z-50 focus:p-4 focus:bg-casino-gold focus:text-casino-bg">
+    İçeriğe Geç
+  </a>
+  <Header />
+  <main id="main-content" class="flex-1">
+    <slot />
+  </main>
+  <Footer />
+</body>
+</html>

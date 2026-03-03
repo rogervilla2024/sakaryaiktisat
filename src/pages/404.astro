@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Sayfa Bulunamadı">
+  <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+    <p class="text-8xl font-display font-bold text-casino-gold mb-6">404</p>
+    <h1 class="text-2xl font-display font-bold text-casino-text mb-4">
+      Sayfa Bulunamadı
+    </h1>
+    <p class="text-casino-text-muted mb-8">
+      Aradığınız sayfa mevcut değil veya taşınmış olabilir.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-casino-gold to-casino-gold-light text-casino-bg font-display font-bold rounded-lg hover:shadow-[0_0_30px_rgba(245,166,35,0.3)] transition-all"
+    >
+      Anasayfaya Dön
+    </a>
+  </div>
+</BaseLayout>

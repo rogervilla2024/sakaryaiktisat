@@ -1,0 +1,2 @@
+# www to non-www redirect (handled at Cloudflare DNS level)
+# /eski-sayfa /yeni-sayfa 301
