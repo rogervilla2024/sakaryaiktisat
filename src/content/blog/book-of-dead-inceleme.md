@@ -9,7 +9,6 @@ readingTime: 7
 draft: false
 ---
 
-# Book of Dead İnceleme: Antik Mısır'ın En Popüler Slotu
 
 Book of Dead, Play'n GO tarafından geliştirilen ve Antik Mısır temasını slot dünyasında zirveye taşıyan efsanevi bir yapımdır. Kaşif Rich Wilde'ın maceralarını konu alan bu oyun, piyasaya sürüldüğü günden bu yana slot kategorisinin en çok oynanan oyunlarından biri olma unvanını korumaktadır. Bu detaylı incelememizde Book of Dead'in teknik özelliklerinden bonus mekaniklerine, strateji önerilerinden sık sorulan sorulara kadar her yönünü ele alıyoruz.
 

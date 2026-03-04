@@ -9,7 +9,6 @@ readingTime: 7
 draft: false
 ---
 
-# Cluster Pays Slotlar: Geleneksel Payline'a Alternatif Rehber
 
 Slot oyunları onlarca yıl boyunca aynı temel prensiple çalıştı: makaraları çevir, belirli bir payline üzerinde eşleşen sembolleri yan yana getir ve kazan. Ancak 2010'ların ortasından itibaren **cluster pays** (küme ödemesi) mekanizması bu geleneksel yaklaşımı tamamen farklı bir boyuta taşıdı. Payline kavramını ortadan kaldıran, grid tabanlı bir yapıda komşu sembollerin kümelenmesiyle kazanç oluşturan bu sistem, slot dünyasına taze bir soluk getirdi. Bu rehberde cluster pays mekanizmasının teknik yapısını, matematiksel özelliklerini ve oyun deneyimini nasıl farklılaştırdığını kapsamlı şekilde ele alıyoruz.
 

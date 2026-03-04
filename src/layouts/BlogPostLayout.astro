@@ -28,25 +28,11 @@ const articleSchema = JSON.stringify({
   "mainEntityOfPage": { "@type": "WebPage", "@id": `https://sakaryaiktisat.com/blog/${getPostSlug(entry.id)}` }
 });
 
-// Build FAQ schema from H3 headings under "Sık Sorulan Sorular"
-const faqHeadings = headings.filter(h => h.depth === 3);
-const faqSchema = faqHeadings.length > 0 ? JSON.stringify({
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": faqHeadings.slice(0, 5).map(h => ({
-    "@type": "Question",
-    "name": h.text,
-    "acceptedAnswer": {
-      "@type": "Answer",
-      "text": `Bu sorunun detaylı cevabı için makalemizi okuyun: ${title}`
-    }
-  }))
-}) : null;
+
 ---
 
 <BaseLayout title={title} description={description} ogType="article">
   <script type="application/ld+json" set:html={articleSchema} slot="head" />
-  {faqSchema && <script type="application/ld+json" set:html={faqSchema} slot="head" />}
 
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
     <Breadcrumb items={[

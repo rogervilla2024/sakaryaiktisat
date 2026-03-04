@@ -9,7 +9,6 @@ readingTime: 8
 draft: false
 ---
 
-# Slot Algoritmaları ve RNG: Şans mı Matematik mi?
 
 Slot makinelerinin önünde oturduğunuzda ya da online bir slot oyununu çevirdiğinizde aklınıza hiç şu soru geldi mi: "Bu sonuçlar gerçekten rastgele mi, yoksa arkada bir düzen mi var?" Bu sorunun cevabı, modern slot teknolojisinin kalbinde yatan **RNG (Random Number Generator)** yani Rastgele Sayı Üreteci sisteminde gizlidir. Bu yazıda slot algoritmalarının matematiksel temellerini, RNG teknolojisinin nasıl çalıştığını ve oyun adilliğinin nasıl sağlandığını derinlemesine inceleyeceğiz.
 

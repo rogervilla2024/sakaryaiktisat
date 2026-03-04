@@ -9,7 +9,6 @@ readingTime: 7
 draft: false
 ---
 
-# Hit Frequency ve Hit Rate: Kazanma Sıklığını Anlama Rehberi
 
 Slot oyunlarını değerlendirirken çoğu oyuncu yalnızca RTP oranına bakar ve diğer kritik metrikleri göz ardı eder. Oysa bir slot oyununun gerçek karakterini anlamak için **hit frequency** (isabet frekansı) ve **hit rate** (kazanma oranı) kavramlarını derinlemesine bilmek gerekir. Bu iki metrik, bir slotun ne sıklıkla ödeme yapacağını ve oyun deneyiminizin nasıl şekilleneceğini doğrudan belirler. Bu rehberde hit frequency ve hit rate kavramlarını matematiksel temelleriyle birlikte inceliyoruz.
 
