@@ -4,7 +4,7 @@ description: "Gates of Olympus slot oyunu detaylı incelemesi. RTP, volatilite, 
 pubDate: 2025-06-27
 category: "inceleme"
 tags: ["gates of olympus", "pragmatic play", "slot inceleme", "multiplier", "tumble"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

@@ -4,7 +4,7 @@ description: "Slot makinelerinde RNG nasıl çalışır? PRNG ve TRNG arasındak
 pubDate: 2025-07-05
 category: "ileri-duzey"
 tags: ["RNG", "slot algoritmaları", "rastgele sayı üreteci", "PRNG", "adil oyun"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

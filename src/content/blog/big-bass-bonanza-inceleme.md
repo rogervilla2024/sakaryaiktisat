@@ -4,7 +4,7 @@ description: "Big Bass Bonanza slot oyununun detaylı incelemesi. Balıkçı öz
 pubDate: 2025-06-29
 category: "inceleme"
 tags: ["big bass bonanza", "pragmatic play", "slot inceleme", "free spins", "balıkçı slot"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

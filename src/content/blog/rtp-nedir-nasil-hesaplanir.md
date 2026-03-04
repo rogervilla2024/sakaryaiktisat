@@ -4,7 +4,7 @@ description: "RTP (Return to Player) nedir, nasıl hesaplanır ve slot oyunu se�
 pubDate: 2025-06-07
 category: "temel-bilgi"
 tags: ["RTP", "return to player", "slot RTP", "kazanma oranı", "temel bilgi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

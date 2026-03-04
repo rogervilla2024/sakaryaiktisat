@@ -4,7 +4,7 @@ description: "Slot volatilitesi nedir? Düşük, orta ve yüksek volatilite aras
 pubDate: 2025-06-09
 category: "temel-bilgi"
 tags: ["volatilite", "slot volatilitesi", "düşük volatilite", "yüksek volatilite", "varyans"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

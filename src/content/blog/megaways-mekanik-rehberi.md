@@ -4,7 +4,7 @@ description: "Megaways slotlar nasıl çalışır? BTG lisansı, değişken maka
 pubDate: 2025-07-09
 category: "ileri-duzey"
 tags: ["megaways", "BTG", "cascading wins", "değişken makara", "slot mekanikleri"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

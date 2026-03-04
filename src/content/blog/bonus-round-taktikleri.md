@@ -4,7 +4,7 @@ description: "Slot oyunlarında bonus round taktikleri, free spin stratejileri v
 pubDate: 2025-06-19
 category: "strateji"
 tags: ["bonus round", "free spin", "bonus taktikleri", "slot bonusları", "çarpan stratejisi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

@@ -1,8 +1,8 @@
 export const SITE = {
-  title: 'Sakarya İktisat',
+  title: 'Slot Taktikleri',
   description: 'Slot taktikleri, casino stratejileri ve oyun incelemeleri — Matematiksel analiz ve profesyonel rehberlerle bilinçli oynayın.',
   url: 'https://sakaryaiktisat.com',
-  author: 'Sakarya İktisat Editör',
+  author: 'Slot Taktikleri Editör',
   lang: 'tr',
 };
 

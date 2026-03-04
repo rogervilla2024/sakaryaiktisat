@@ -4,7 +4,7 @@ description: "Progressive jackpot slot oyunlarında büyük ödüller kazanma st
 pubDate: 2025-06-23
 category: "strateji"
 tags: ["progressive jackpot", "büyük ödül", "jackpot stratejisi", "mega jackpot", "slot kazanma"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

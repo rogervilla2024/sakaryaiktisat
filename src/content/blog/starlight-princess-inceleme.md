@@ -4,7 +4,7 @@ description: "Starlight Princess slot oyununun detaylı incelemesi. Anywhere pay
 pubDate: 2025-07-03
 category: "inceleme"
 tags: ["starlight princess", "pragmatic play", "slot inceleme", "anywhere pays", "multiplier"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

@@ -4,7 +4,7 @@ description: "Online slotlar mı yoksa fiziksel slot makineleri mi daha avantajl
 pubDate: 2025-06-13
 category: "temel-bilgi"
 tags: ["online slot", "fiziksel slot", "slot karşılaştırma", "kumarhane", "temel bilgi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

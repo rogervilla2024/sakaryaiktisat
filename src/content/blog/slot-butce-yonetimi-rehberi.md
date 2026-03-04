@@ -4,7 +4,7 @@ description: "Slot oyunlarında bütçe yönetimi stratejileri, stop-loss limitl
 pubDate: 2025-06-15
 category: "strateji"
 tags: ["bütçe yönetimi", "bankroll", "stop-loss", "slot stratejisi", "sorumlu oyun"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

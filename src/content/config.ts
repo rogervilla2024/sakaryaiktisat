@@ -9,7 +9,7 @@ const blog = defineCollection({
     updatedDate: z.coerce.date().optional(),
     category: z.enum(['temel-bilgi', 'strateji', 'inceleme', 'ileri-duzey']),
     tags: z.array(z.string()),
-    author: z.string().default('Sakarya İktisat Editör'),
+    author: z.string().default('Slot Taktikleri Editör'),
     image: z.string().optional(),
     readingTime: z.number(),
     draft: z.boolean().default(false),

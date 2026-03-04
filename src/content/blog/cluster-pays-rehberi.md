@@ -4,7 +4,7 @@ description: "Cluster pays slotlar nasıl çalışır? Grid slot mekanikleri, tu
 pubDate: 2025-07-11
 category: "ileri-duzey"
 tags: ["cluster pays", "grid slotlar", "tumble", "cascade", "slot mekanikleri"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

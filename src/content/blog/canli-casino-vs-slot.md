@@ -4,7 +4,7 @@ description: "Canlı casino ve slot oyunları arasındaki farklar nelerdir? RTP,
 pubDate: 2025-07-13
 category: "ileri-duzey"
 tags: ["canlı casino", "slot karşılaştırma", "RTP farkları", "casino oyunları", "oyun seçimi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

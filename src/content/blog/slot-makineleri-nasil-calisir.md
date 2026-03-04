@@ -4,7 +4,7 @@ description: "Slot makineleri nasıl çalışır? RNG sistemi, semboller, paylin
 pubDate: 2025-06-05
 category: "temel-bilgi"
 tags: ["slot makineleri", "RNG", "payline", "slot nasıl çalışır", "temel bilgi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

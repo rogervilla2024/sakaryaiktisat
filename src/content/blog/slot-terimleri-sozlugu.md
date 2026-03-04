@@ -4,7 +4,7 @@ description: "Slot oyunlarındaki tüm terimleri A'dan Z'ye açıklayan kapsaml�
 pubDate: 2025-06-11
 category: "temel-bilgi"
 tags: ["slot terimleri", "slot sözlüğü", "wild", "scatter", "free spin", "temel bilgi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 9
 draft: false
 ---

@@ -4,7 +4,7 @@ description: "Hit frequency nedir, nasıl hesaplanır? Hit rate ile RTP arasınd
 pubDate: 2025-07-07
 category: "ileri-duzey"
 tags: ["hit frequency", "hit rate", "kazanma sıklığı", "RTP", "slot istatistikleri"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

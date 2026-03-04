@@ -4,7 +4,7 @@ description: "Slot oyunlarında kâr realizasyonu stratejileri, kazançları kor
 pubDate: 2025-06-21
 category: "strateji"
 tags: ["kâr realizasyonu", "kazanç koruma", "çekim stratejisi", "slot taktikleri", "para yönetimi"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

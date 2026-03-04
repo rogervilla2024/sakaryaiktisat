@@ -4,7 +4,7 @@ description: "Book of Dead slot oyununun kapsamlı incelemesi. Expanding symbols
 pubDate: 2025-07-01
 category: "inceleme"
 tags: ["book of dead", "play n go", "slot inceleme", "expanding symbols", "free spins"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---

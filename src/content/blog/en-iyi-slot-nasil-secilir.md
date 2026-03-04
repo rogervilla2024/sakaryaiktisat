@@ -4,7 +4,7 @@ description: "En iyi slot oyununu seçmek için RTP, volatilite, bonus özellikl
 pubDate: 2025-06-17
 category: "strateji"
 tags: ["slot seçimi", "RTP", "volatilite", "slot provider", "bonus özellikleri"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 8
 draft: false
 ---

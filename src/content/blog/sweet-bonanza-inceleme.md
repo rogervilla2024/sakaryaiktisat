@@ -4,7 +4,7 @@ description: "Sweet Bonanza slot oyununun detaylı incelemesi. RTP, volatilite, 
 pubDate: 2025-06-25
 category: "inceleme"
 tags: ["sweet bonanza", "pragmatic play", "slot inceleme", "cluster pays", "tumble"]
-author: "Sakarya İktisat Editör"
+author: "Slot Taktikleri Editör"
 readingTime: 7
 draft: false
 ---
